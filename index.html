@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,15 +14,13 @@
 
 <body>
 
-<audio id="clickSound" src="click.mp3"></audio>
-<audio id="xpSound" src="xp.mp3"></audio>
-<audio id="bgm" src="bgm.mp3" loop></audio>
+<audio id="clickSound" src="assets/click.mp3"></audio>
+<audio id="xpSound" src="assets/xp.mp3"></audio>
+<audio id="bgm" src="assets/bgm.mp3" loop></audio>
 
 <video autoplay muted loop id="bg-video">
-<source src="video_bg_v2.mp4" type="video/mp4">
+<source src="assets/video_bg_v2.mp4" type="video/mp4">
 </video>
-
-<img src="zenshield.jpg" class="shield-icon">
 
 <div class="overlay"></div>
 
@@ -66,6 +63,7 @@ Aryaman's Zen Shields
 <button class="shield-btn" onclick="useShield('aryaman')">Use</button>
 
 </div>
+
 
 <div class="shield-row">
 
@@ -139,8 +137,6 @@ UNDO
 </div>
 
 
-<!-- QUEST LOG -->
-
 <div class="quest-log">
 
 <h2 class="quest-title">📜 Quest Log 📜</h2>
@@ -151,13 +147,13 @@ UNDO
 
 <br><br>
 
-• Get SQL ⭐⭐⭐⭐  
+Get SQL ⭐⭐⭐⭐  
 <br><br>
 
-• Get Problem Solving ⭐⭐⭐⭐  
+Get Problem Solving ⭐⭐⭐⭐  
 <br><br>
 
-• Get Python ⭐⭐⭐  
+Get Python ⭐⭐⭐  
 
 <br><br><br>
 
@@ -165,10 +161,10 @@ UNDO
 
 <br><br>
 
-• Solve 350 Total Questions  
+Solve 350 Total Questions  
 <br><br>
 
-• Solve 150 Hard Questions
+Solve 150 Hard Questions
 
 </div>
 
@@ -186,178 +182,4 @@ DEVELOPED BY ARYAMAN AND ARSHIYA
 <script src="script.js"></script>
 
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<title>ZEN-ARCADIA</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-
-<audio id="clickSound" src="assets/click.mp3"></audio>
-<audio id="xpSound" src="assets/xp.mp3"></audio>
-
-<video autoplay muted loop id="bg-video">
-<source src="assets/video_bg_v2.mp4">
-</video>
-
-<div class="overlay"></div>
-
-
-<!-- STREAK -->
-
-<div class="streak-box">
-
-<div>
-Aryaman's Streak <span id="aStreak">0</span>
-</div>
-
-<div>
-Arshiya's Streak <span id="bStreak">0</span>
-</div>
-
-<div class="timer">
-Breaks in <span id="streakTimer"></span>
-</div>
-
-</div>
-
-
-<!-- ZEN SHIELDS -->
-
-<div class="shield-box">
-
-<div class="shield-row">
-
-<img src="assets/zenshield.jpg" class="shield-icon">
-
-<span class="shield-text">
-Aryaman's Zen Shields
-</span>
-
-<span id="aShields">1</span>
-
-<button class="shield-btn" onclick="useShield('aryaman')">Use</button>
-
-</div>
-
-
-<div class="shield-row">
-
-<img src="assets/zenshield.jpg" class="shield-icon">
-
-<span class="shield-text">
-Arshiya's Zen Shields
-</span>
-
-<span id="bShields">1</span>
-
-<button class="shield-btn" onclick="useShield('arshiya')">Use</button>
-
-</div>
-
-</div>
-
-
-<div class="container">
-
-<h1 class="pixel-title">ZEN-ARCADIA</h1>
-
-<p class="subtitle">Aryaman vs Arshiya</p>
-
-
-<div class="players">
-
-<div class="card">
-
-<h2>💜 Aryaman 💜</h2>
-
-<div class="xp-bar">
-<div id="aProgress" class="xp-fill"></div>
-</div>
-
-<p>Level: <span id="aLevel">1</span></p>
-<p>XP: <span id="aXP">0</span></p>
-
-<button class="pixel-btn" onclick="solveProblem('aryaman')">PROBLEM SOLVED!</button>
-<button class="pixel-btn" onclick="undoXP('aryaman')">UNDO</button>
-
-</div>
-
-
-<div class="card">
-
-<h2>🤍 Arshiya 🤍</h2>
-
-<div class="xp-bar">
-<div id="bProgress" class="xp-fill"></div>
-</div>
-
-<p>Level: <span id="bLevel">1</span></p>
-<p>XP: <span id="bXP">0</span></p>
-
-<button class="pixel-btn" onclick="solveProblem('arshiya')">PROBLEM SOLVED!</button>
-<button class="pixel-btn" onclick="undoXP('arshiya')">UNDO</button>
-
-</div>
-
-</div>
-
-
-<!-- QUEST LOG -->
-
-<div class="quest-log">
-
-<h2 class="quest-title">📜 Quest Log 📜</h2>
-
-<div class="quest-content">
-
-★ HackerRank
-
-<br><br>
-
-• Get SQL ⭐⭐⭐⭐  
-<br><br>
-• Get Problem Solving ⭐⭐⭐⭐  
-<br><br>
-• Get Python ⭐⭐⭐  
-
-<br><br>
-<br><br>
-
-★ LeetCode
-
-<br><br>
-
-• Solve 350 Total Questions  
-<br><br>
-• Solve 150 Hard Questions
-<br><br>
-
-</div>
-
-</div>
-
-</div>
-
-
-<footer class="footer">
-
-DEVELOPED BY ARYAMAN AND ARSHIYA
-
-</footer>
-
-<script src="script.js"></script>
-
-</body>
->>>>>>> 05129158a1705bd3dddaf026de74ed72f0a9c77d
 </html>
