@@ -9,12 +9,21 @@ arshiya:{xp:0,level:1,history:[],shields:1,streak:0,lastSolved:null}
 
 /* FIREBASE */
 
-const db = window.firebaseDB;
-const ref = window.firebaseRef;
-const updateDB = window.firebaseUpdate;
-const onValue = window.firebaseOnValue;
+let db, ref, updateDB, onValue;
 
-if(db){
+function initFirebase(){
+
+if(!window.firebaseReady){
+setTimeout(initFirebase,100);
+return;
+}
+
+db = window.firebaseReady.db;
+ref = window.firebaseReady.ref;
+updateDB = window.firebaseReady.update;
+onValue = window.firebaseReady.onValue;
+
+/* LIVE SYNC */
 
 onValue(ref(db,"zenarcadia"),(snapshot)=>{
 
@@ -36,6 +45,8 @@ render();
 });
 
 }
+
+initFirebase();
 
 /* PARTICLES */
 

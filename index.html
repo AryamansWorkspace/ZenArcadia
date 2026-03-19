@@ -165,14 +165,20 @@ appId: "1:369024449954:web:8db18a955e5b5d01fc86fb"
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-window.firebaseDB=db;
-window.firebaseRef=ref;
-window.firebaseUpdate=update;
-window.firebaseOnValue=onValue;
+/* WAIT UNTIL FIREBASE IS READY */
+
+window.firebaseReady = {
+db,
+ref,
+update,
+onValue
+};
 
 </script>
 
-<script src="script.js"></script>
+<!-- LOAD SCRIPT AFTER -->
+
+<script src="script.js" defer></script>
 
 </body>
 </html>
