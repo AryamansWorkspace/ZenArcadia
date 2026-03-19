@@ -7,21 +7,46 @@ arshiya:{xp:0,level:1,history:[],shields:1,streak:0,lastSolved:null}
 };
 }
 
+/* FIREBASE */
+
+const db = window.firebaseDB;
+const ref = window.firebaseRef;
+const updateDB = window.firebaseUpdate;
+const onValue = window.firebaseOnValue;
+
+if(db){
+
+onValue(ref(db,"zenarcadia"),(snapshot)=>{
+
+const cloud=snapshot.val();
+if(!cloud)return;
+
+data.aryaman.xp=cloud.aryaman.xp;
+data.aryaman.level=cloud.aryaman.level;
+data.aryaman.streak=cloud.aryaman.streak;
+data.aryaman.shields=cloud.aryaman.shields;
+
+data.arshiya.xp=cloud.arshiya.xp;
+data.arshiya.level=cloud.arshiya.level;
+data.arshiya.streak=cloud.arshiya.streak;
+data.arshiya.shields=cloud.arshiya.shields;
+
+render();
+
+});
+
+}
+
 /* PARTICLES */
 
 const container=document.getElementById("particles");
 
 for(let i=0;i<35;i++){
-
 let p=document.createElement("div");
-
 p.className="particle";
-
 p.style.left=Math.random()*100+"vw";
 p.style.animationDuration=(6+Math.random()*6)+"s";
-
 container.appendChild(p);
-
 }
 
 /* CLICK + MUSIC */
@@ -153,7 +178,27 @@ document.getElementById("bProgress").style.width=(data.arshiya.xp/bNeeded*100)+"
 }
 
 function save(){
+
 localStorage.setItem("zenarcadia",JSON.stringify(data));
+
+if(db){
+
+updateDB(ref(db,"zenarcadia/aryaman"),{
+xp:data.aryaman.xp,
+level:data.aryaman.level,
+streak:data.aryaman.streak,
+shields:data.aryaman.shields
+});
+
+updateDB(ref(db,"zenarcadia/arshiya"),{
+xp:data.arshiya.xp,
+level:data.arshiya.level,
+streak:data.arshiya.streak,
+shields:data.arshiya.shields
+});
+
+}
+
 }
 
 render();

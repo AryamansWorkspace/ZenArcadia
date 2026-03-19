@@ -23,9 +23,7 @@
 </video>
 
 <div class="overlay"></div>
-
 <div id="particles"></div>
-
 
 <!-- STREAK -->
 
@@ -45,49 +43,30 @@ Breaks in <span id="streakTimer"></span>
 
 </div>
 
-
 <!-- ZEN SHIELDS -->
 
 <div class="shield-box">
 
 <div class="shield-row">
-
 <img src="assets/zenshield.jpg" class="shield-icon">
-
-<span class="shield-text">
-Aryaman's Zen Shields
-</span>
-
+<span class="shield-text">Aryaman's Zen Shields</span>
 <span id="aShields">1</span>
-
 <button class="shield-btn" onclick="useShield('aryaman')">Use</button>
-
 </div>
-
 
 <div class="shield-row">
-
 <img src="assets/zenshield.jpg" class="shield-icon">
-
-<span class="shield-text">
-Arshiya's Zen Shields
-</span>
-
+<span class="shield-text">Arshiya's Zen Shields</span>
 <span id="bShields">1</span>
-
 <button class="shield-btn" onclick="useShield('arshiya')">Use</button>
-
 </div>
 
 </div>
-
 
 <div class="container">
 
 <h1 class="pixel-title">ZEN-ARCADIA</h1>
-
 <p class="subtitle">Aryaman vs Arshiya</p>
-
 
 <div class="players">
 
@@ -102,16 +81,10 @@ Arshiya's Zen Shields
 <p>Level: <span id="aLevel">1</span></p>
 <p>XP: <span id="aXP">0</span></p>
 
-<button class="pixel-btn" onclick="solveProblem('aryaman')">
-PROBLEM SOLVED!
-</button>
-
-<button class="pixel-btn" onclick="undoXP('aryaman')">
-UNDO
-</button>
+<button class="pixel-btn" onclick="solveProblem('aryaman')">PROBLEM SOLVED!</button>
+<button class="pixel-btn" onclick="undoXP('aryaman')">UNDO</button>
 
 </div>
-
 
 <div class="card">
 
@@ -124,18 +97,12 @@ UNDO
 <p>Level: <span id="bLevel">1</span></p>
 <p>XP: <span id="bXP">0</span></p>
 
-<button class="pixel-btn" onclick="solveProblem('arshiya')">
-PROBLEM SOLVED!
-</button>
-
-<button class="pixel-btn" onclick="undoXP('arshiya')">
-UNDO
-</button>
+<button class="pixel-btn" onclick="solveProblem('arshiya')">PROBLEM SOLVED!</button>
+<button class="pixel-btn" onclick="undoXP('arshiya')">UNDO</button>
 
 </div>
 
 </div>
-
 
 <div class="quest-log">
 
@@ -172,12 +139,38 @@ Solve 150 Hard Questions
 
 </div>
 
-
 <footer class="footer">
 DEVELOPED BY ARYAMAN AND ARSHIYA
 </footer>
 
 <div id="xp-popup-container"></div>
+
+<!-- FIREBASE -->
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import { getDatabase, ref, update, onValue } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyB7J-P8O03-ymk_l4hv45DTQ4eRQiJ4xd4",
+authDomain: "zenarcadia-97dc9.firebaseapp.com",
+databaseURL: "https://zenarcadia-97dc9-default-rtdb.asia-southeast1.firebasedatabase.app",
+projectId: "zenarcadia-97dc9",
+storageBucket: "zenarcadia-97dc9.appspot.com",
+messagingSenderId: "369024449954",
+appId: "1:369024449954:web:8db18a955e5b5d01fc86fb"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+window.firebaseDB=db;
+window.firebaseRef=ref;
+window.firebaseUpdate=update;
+window.firebaseOnValue=onValue;
+
+</script>
 
 <script src="script.js"></script>
 
